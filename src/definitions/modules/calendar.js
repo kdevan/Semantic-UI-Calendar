@@ -203,9 +203,9 @@
               var startMonth = display.getMonth() + monthOffset;
               var year = display.getFullYear();
 
-              var columns = isDay ? 7 : isHour ? 4 : 4;
+              var columns = isDay ? 7 : isHour ? 4 : 2;
               var columnsString = columns === 7 ? 'seven' : columns === 4 ? 'four' : 'three';
-              var rows = isDay || isHour ? 6 : Math.ceil(60 / settings.timeInterval / 4);
+              var rows = isDay || isHour ? 6 : 2;
               var pages = isDay ? multiMonth : 1;
 
               var container = $container;
@@ -286,7 +286,7 @@
                   for (c = 0; c < columns; c++, i++) {
                     var cellDate = isYear ? new Date(i, month, 1, hour, minute) :
                       isMonth ? new Date(year, i, 1, hour, minute) : isDay ? new Date(year, month, i, hour, minute) :
-                        isHour ? new Date(year, month, day, i) : new Date(year, month, day, hour, i * settings.timeInterval);
+                        isHour ? new Date(year, month, day, i) : new Date(year, month, day, hour, i * 15);
                     var cellText = isYear ? i :
                       isMonth ? settings.text.monthsShort[i] : isDay ? cellDate.getDate() :
                         formatter.time(cellDate, settings, true);
@@ -1014,7 +1014,6 @@
     startCalendar: null,  // jquery object or selector for another calendar that represents the start date of a date range
     endCalendar: null,    // jquery object or selector for another calendar that represents the end date of a date range
     multiMonth: 1,        // show multiple months when in 'day' mode
-    timeInterval: 5,      // set the time interval in minutes that are shown when picking a time
 
     // popup options ('popup', 'on', 'hoverable', and show/hide callbacks are overridden)
     popupOptions: {
