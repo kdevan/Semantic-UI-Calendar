@@ -286,7 +286,7 @@
                   for (c = 0; c < columns; c++, i++) {
                     var cellDate = isYear ? new Date(i, month, 1, hour, minute) :
                       isMonth ? new Date(year, i, 1, hour, minute) : isDay ? new Date(year, month, i, hour, minute) :
-                        isHour ? new Date(year, month, day, i) : new Date(year, month, day, hour, i * settings.minutesInterval);
+                        isHour ? new Date(year, month, day, i) : new Date(year, month, day, hour, i * settings.timeInterval);
                     var cellText = isYear ? i :
                       isMonth ? settings.text.monthsShort[i] : isDay ? cellDate.getDate() :
                         formatter.time(cellDate, settings, true);
@@ -1014,7 +1014,7 @@
     startCalendar: null,  // jquery object or selector for another calendar that represents the start date of a date range
     endCalendar: null,    // jquery object or selector for another calendar that represents the end date of a date range
     multiMonth: 1,        // show multiple months when in 'day' mode
-    minutesInterval: 5,   // pick the interval that minutes are displayed in when picking time
+    timeInterval: 5,      // set the interval in minutes that are displayed when picking a time
 
     // popup options ('popup', 'on', 'hoverable', and show/hide callbacks are overridden)
     popupOptions: {
