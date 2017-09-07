@@ -203,9 +203,9 @@
               var startMonth = display.getMonth() + monthOffset;
               var year = display.getFullYear();
 
-              var columns = isDay ? 7 : isHour ? 4 : 3;
+              var columns = isDay ? 7 : isHour ? 4 : 4;
               var columnsString = columns === 7 ? 'seven' : columns === 4 ? 'four' : 'three';
-              var rows = isDay || isHour ? 6 : 4;
+              var rows = isDay || isHour ? 6 : Math.ceil(60 / settings.timeInterval / 4);
               var pages = isDay ? multiMonth : 1;
 
               var container = $container;
