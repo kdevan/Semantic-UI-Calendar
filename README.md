@@ -97,7 +97,8 @@ The following settings are supported by this module:
     formatInput: true,    // format the input text upon input blur and module creation
     startCalendar: null,  // jquery object or selector for another calendar that represents the start date of a date range
     endCalendar: null,    // jquery object or selector for another calendar that represents the end date of a date range
-    multiMonth: 1,        // show multiple months when in 'day' mode
+    multiMonth: 1,        // show multiple months when in 'day' mode,
+    timeInterval: 5,      // set the interval in minutes that are displayed when picking a time
 
     // popup options ('popup', 'on', 'hoverable', and show/hide callbacks are overridden)
     popupOptions: {
